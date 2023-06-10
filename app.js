@@ -44,17 +44,22 @@ const addTodo = (e) => {
 
 //* ======= Create new todo =======
 const createLi= (newTodo) =>{
+    
 //*=========Create elements ===========
     const todoLi = document.createElement("li")
     const todoInput = document.createElement("input")
     const todoLabel = document.createElement("label")
     const todoIcon = document.createElement("i")
 //*=======Append elements each other=========
-    todos.appendChild(todoLi)
-    todoLi.appendChild(todoInput)
-    todoLi.appendChild(todoLabel)
-    todoLi.appendChild(todoIcon)
-    todoLabel.textContent = newTodo;
+
+todoLabel.textContent = newTodo;
+todoLi.appendChild(todoInput)
+todoLi.appendChild(todoLabel)
+todoLi.appendChild(todoIcon)
+todos.appendChild(todoLi)
+
+
+
 //* =======Add class elements==============
     todoLi.classList.add("list-group-item")
     todoInput.classList.add("form-check-input" , "me-2")
@@ -68,7 +73,7 @@ const createLi= (newTodo) =>{
 //*====== Add item local storage ===========
     const addLocalStorage = (newTodo) =>{
         checkLocalStorage();
-        todoArr.push(newTodo);
+        todoArr.unshift(newTodo);
         localStorage.setItem("todoArr", JSON.stringify(todoArr));
      }
      //* ====== Check Local Storage =======

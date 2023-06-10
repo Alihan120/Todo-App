@@ -36,6 +36,8 @@ body{
 }
 #todos{
     width: 650px;
+    display: flex;
+    flex-direction: column-reverse;
 }
 .list-group-item{
     height: 60px !important;
@@ -43,6 +45,8 @@ body{
     display: flex;
     align-items: center;
     font-size: 1.2rem;
+    border-radius: 5px 5px;
+    margin: 1px !important;
 }
 input{
     width: 15%;
